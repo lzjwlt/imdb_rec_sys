@@ -5,12 +5,22 @@
 
 from csv_rw import csv_to_list
 
+file_movies = 'ml-latest-small/movies.csv'
+file_links = 'ml-latest-small/links.csv'
+file_pics = 'ml-latest-small/pics.csv'
+file_ratings = 'ml-latest-small/ratings.csv'
+
+
+def get_user_id_list():
+    id_list = []
+    rating_list = csv_to_list(file_ratings)
+    for item in rating_list:
+        id_list.append(item[0])
+    return id_list
+
 
 def movie_to_dict(movie_id):
     movie_id = str(movie_id)
-    file_movies = 'ml-latest-small/movies.csv'
-    file_links = 'ml-latest-small/links.csv'
-    file_pics = 'ml-latest-small/pics.csv'
     movie = dict()
     movie['id'] = movie_id
     movies_list = csv_to_list(file_movies)
