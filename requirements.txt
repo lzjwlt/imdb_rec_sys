@@ -1,0 +1,7 @@
+gunicorn
+numpy
+flask
+scipy
+csc-pysparse
+networkx
+divisi2
